@@ -78,7 +78,9 @@ function set_env() {
     log_record "start set env params"
     log_record "set git config"
     git config --global user.name "$user_name"
-    git config --global user.email "$user_email"    
+    git config --global user.email "$user_email" 
+    go env -w GO111MODULE=on
+    go env -w GOPROXY=https://goproxy.io,direct
 }
 
 mkdir -p $work_path
